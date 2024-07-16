@@ -93,7 +93,7 @@ const checkout = async (req, res) => {
         <p class="thanks">Thank you for choosing our website. If you have any questions or concerns, please don't hesitate to contact us.</p>
         <div class="signature">
           <p>Best regards,</p>
-          <p><a href="https://e-shopit.vercel.app/" target="_blank">ShopIt.com</a></p>
+          <p><a href="https://banglabazaarclient-elmans-projects-8c8470ac.vercel.app//" target="_blank">banglabazaar.com</a></p>
         </div>
       </body>
       </html>`

@@ -539,7 +539,7 @@ table, td { color: #000000; } @media (max-width: 480px) { #u_content_image_1 .v-
 <p style="line-height: 140%;">Thank you for using our service.</p>
 <p style="line-height: 140%;"> </p>
 <p style="line-height: 140%;">Best regards,</p>
-<p style="line-height: 140%;">ShopIt.com</p>
+<p style="line-height: 140%;">banglabazaar.com</p>
   </div>
 
       </td>
@@ -850,7 +850,7 @@ table, td { color: #000000; } @media (max-width: 480px) { #u_content_image_1 .v-
 <p style="line-height: 140%;">Thank you for using our service.</p>
 <p style="line-height: 140%;"> </p>
 <p style="line-height: 140%;">Best regards,</p>
-<p style="line-height: 140%;">ShopIt.com</p>
+<p style="line-height: 140%;">banglabazaar.com</p>
   </div>
 
       </td>

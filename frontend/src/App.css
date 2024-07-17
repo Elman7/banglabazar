@@ -35,14 +35,7 @@ a {
 
 }
 
-.toastContainerBox {
-  display: flex;
-  /* justify-content: center;
-  align-items: center; */
-  width: 300px;
-  z-index: 1000;
-  margin:50px auto;
-}
+
 
 .margin {
   margin-top: 120px;
@@ -58,12 +51,6 @@ a {
     align-items: center;
   }
 
-  .toastContainerBox {
-    /* max-width: 250px; */
-    /* top: 50px;
-    left: 140px; */
-
-  }
 
   .margin {
     margin-top: 70px;
@@ -81,22 +68,6 @@ a {
 
 @media (min-width: 768px) and (max-width:1023px) {}
 
-/* .placeholder-animation {
-  position: relative;
-}
-
-.placeholder-animation::before {
-  content: attr(placeholder);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: slide 2s ease-in-out infinite;
-} */
 
 @keyframes slide {
   0% {

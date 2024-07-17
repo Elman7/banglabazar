@@ -102,13 +102,13 @@ const AddProduct = ({ getProductInfo, data }) => {
         productFilter.push('running', 'football', 'formal', 'casual')
     }
     else if (productInfo.type === 'electronics') {
-        productFilter.push('monitor', 'ssd', 'hdd')
+        productFilter.push('monitor', 'ssd', 'hdd','mobile','smartwatch','earbuds')
     }
     else {
         productFilter.push('all')
 
     }
-    const typeDropdown = ['book', 'cloths', 'shoe', 'electronics'];
+    const typeDropdown = ['book', 'cloths', 'shoe', 'electronics','jewelry'];
     const shoeBrand = ['adidas', 'hushpuppies', 'nike', 'reebok', 'vans']
 
 

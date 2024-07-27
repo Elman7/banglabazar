@@ -5,24 +5,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* padding: 15px; */
+    
     height: 400px;
     padding-bottom: 15px;
-    /* border: 2px solid red; */
+    
 }
 
 .card_action {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid black; */
     flex-direction: column;
 }
 
 .img_box {
     height: 200px;
     width: 250px;
-    /* padding: 5px; */
     display: flex;
     justify-content: center;
     align-items: center;

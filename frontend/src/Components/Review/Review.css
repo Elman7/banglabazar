@@ -2,10 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 220px; */
-    /* flex-wrap: wrap; */
+    
     padding: 50px;
-    /* background-color: red; */
+     background-color: rgb(25, 35, 26); 
 }
 
 .form {
@@ -21,29 +20,35 @@
 .form button {
     align-self: flex-start;
     margin-left: 30px;
+    background-color: rgb(184, 14, 14);
+    
+    
+    
 }
 
 .comment {
     width: 300px;
+    height:70px;
     background-color: transparent;
+
 }
 
 .form-img-box {
-    height: 550px;
-    width: 500px;
-    /* border: 2px solid black; */
+    height: 500px;
+    width: 450px;
+    border: 2px solid black; 
 }
 
 .review-img {
     height: 100%;
     width: 100%;
-    /* object-fit: cover; */
+     object-fit: cover;
     margin-bottom: 20px;
 }
 
 .expression-icon {
-    font-size: 30px;
-    display: flex;
+    font-size: 40px;
+     display: flex ; 
     justify-content: center;
     align-items: center;
 }
@@ -54,14 +59,14 @@
     justify-content: center;
     width: 70%;
     margin: 50px auto;
-    /* border: 2px solid black;/ */
+     border: 2px solid rgb(22, 198, 19);
     font-size: 1rem;
 }
 
-@media (min-width: 768px) and (max-width:1023px) {
+ @media (min-width: 768px) and (max-width:1023px) {
     .review-box {
         width: 100%;
-        /* border: 2px solid black; */
+         border: 2px solid black; 
     }
 
     .form-img-box {
@@ -101,4 +106,4 @@
         height: 350px;
         width: 450px;
     }
-}
+} 

@@ -98,7 +98,7 @@ const AddProduct = ({ getProductInfo, data }) => {
         productFilter.push('running', 'football', 'formal', 'casual')
     }
     else if (productInfo.type === 'electronics') {
-        productFilter.push('monitor', 'ssd', 'hdd','mobile','smartwatch','earbuds')
+        productFilter.push('monitor', 'ssd', 'hdd','mobile','smartwatch','earbuds','console')
     }
     else {
         productFilter.push('all')

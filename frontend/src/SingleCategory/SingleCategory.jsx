@@ -48,7 +48,7 @@ const SingleCategory = () => {
         productFilter.push('All', 'Running', 'Football', 'Formal', 'Casual', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
     else if (cat === 'electronics') {
-        productFilter.push('All', 'Monitor', 'SSD', 'HDD','Mobile','Smartwatch','Earbuds', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+        productFilter.push('All', 'Monitor', 'SSD', 'HDD','Mobile','Smartwatch','Earbuds','console', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
 
     }
     else if (cat === 'jewelry') {

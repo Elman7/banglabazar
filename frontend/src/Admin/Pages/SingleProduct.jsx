@@ -54,7 +54,7 @@ const SingleProduct = () => {
     const productFilter = []
 
     if (productInfo.type === 'book') {
-        productFilter.push('scifi', 'business', 'mystery', 'cookbooks', 'accessories')
+        productFilter.push('scifi', 'business', 'mystery','political', 'cookbooks', 'accessories')
     }
     else if (productInfo.type === 'cloths') {
         productFilter.push('men', 'women')

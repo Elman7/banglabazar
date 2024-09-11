@@ -39,7 +39,7 @@ const SingleCategory = () => {
     const productFilter = []
 
     if (cat === 'book') {
-        productFilter.push('All', 'Scifi', 'Business', 'Mystery', 'Cookbooks', 'Accessories', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+        productFilter.push('All', 'Scifi', 'Business', 'Mystery','political', 'Cookbooks', 'Accessories', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
     else if (cat === 'cloths') {
         productFilter.push('All', 'Men', 'Women', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
@@ -48,7 +48,7 @@ const SingleCategory = () => {
         productFilter.push('All', 'Running', 'Football', 'Formal', 'Casual', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
     else if (cat === 'electronics') {
-        productFilter.push('All', 'Monitor', 'SSD', 'HDD','Mobile','Smartwatch','Earbuds', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+        productFilter.push('All', 'Monitor', 'SSD', 'HDD','Mobile','Smartwatch','Earbuds','console', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
 
     }
     else if (cat === 'jewelry') {

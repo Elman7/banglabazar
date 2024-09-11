@@ -89,7 +89,7 @@ const AddProduct = ({ getProductInfo, data }) => {
     const productFilter = []
 
     if (productInfo.type === 'book') {
-        productFilter.push('scifi', 'business', 'mystery', 'cookbooks', 'accessories')
+        productFilter.push('scifi', 'business', 'mystery','political', 'cookbooks', 'accessories')
     }
     else if (productInfo.type === 'cloths') {
         productFilter.push('men', 'women')
@@ -98,7 +98,7 @@ const AddProduct = ({ getProductInfo, data }) => {
         productFilter.push('running', 'football', 'formal', 'casual')
     }
     else if (productInfo.type === 'electronics') {
-        productFilter.push('monitor', 'ssd', 'hdd','mobile','smartwatch','earbuds')
+        productFilter.push('monitor', 'ssd', 'hdd','mobile','smartwatch','earbuds','console')
     }
     else {
         productFilter.push('all')

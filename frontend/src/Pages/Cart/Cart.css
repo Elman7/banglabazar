@@ -1,21 +1,48 @@
+/* Global styles for more modern look */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Elegant styling for total-card */
 .total-card {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 90px;
-    background-color: rgb(149, 206, 143);
+    background-color: #e3e8e5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
+/* Individual card style refinement */
 .total-card {
     width: 30%;
     background-color: white;
-    border: 2px solid black;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.total-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
 .main-card {
@@ -24,10 +51,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-direction: column; */
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 20px;
     height: 540px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .main-cart-container {
@@ -38,48 +73,48 @@
 }
 
 .cart-img-box {
-    height: 100px;
-    width: 100px;
-    border: 2px solid black;
+    height: 120px;
+    width: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
 }
 
 .cart-img-box .cart-img {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .cart-img {
-    width: 200px;
-    height: 150px;
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.total-card {
-    background-color: red;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cart-img:hover {
+    transform: scale(1.05);
 }
 
+/* Empty cart image */
 .empty-cart-img {
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
 
-
-
-
 @media screen and (max-width: 960px) {
     .main-card {
         width: 300px;
         height: 350px;
-        
     }
 
     .total-card {
-        background-color: green;
+        background-color: #a3d5a4;
     }
 
     .cart-img {
@@ -91,7 +126,7 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .total-card {
-        background-color: blue;
+        background-color: #87c1d1;
     }
 
     .cart-img {

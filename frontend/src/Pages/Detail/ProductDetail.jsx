@@ -213,7 +213,7 @@ const ProductDetail = () => {
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    // background: 'red',
+                                     
                                     '& > *': {
                                         m: 1,
                                     },

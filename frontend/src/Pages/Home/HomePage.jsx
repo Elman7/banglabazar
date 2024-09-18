@@ -40,8 +40,8 @@ const HomePage = () => {
                 <Container style={{ marginTop: 90, display: "flex", justifyContent: 'center' }}>
                     <SearchBar />
                 </Container>
-                <Typography variant='h3' sx={{ textAlign: 'center', marginTop: 10, color: '#1976d2', fontWeight: 'bold' }}>Categories</Typography>
-                <Container maxWidth='xl' style={{ marginTop: 90, display: "flex", justifyContent: 'center', flexGrow: 1, flexWrap: 'wrap', gap: 20, }}>
+                <Typography variant='h3' sx={{ textAlign: 'center', marginTop: 10, color: '#1976d2', fontWeight: 'bolder' }}>Categories</Typography>
+                <Container maxWidth='xl' style={{ marginTop: 90, display: "flex", justifyContent: 'center', flexGrow: 1, flexWrap: 'wrap', gap: 50, }}>
                     {
                         BannerData.map(data => (
                             <CategoryCard data={data} key={data.img} />

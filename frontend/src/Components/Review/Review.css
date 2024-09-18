@@ -4,7 +4,9 @@
     align-items: center;
     
     padding: 50px;
-     background-color: rgb(25, 35, 26); 
+   /*  background-color: rgb(255, 255, 255); */
+
+   background-color:transparent;
 }
 
 .form {
@@ -20,7 +22,7 @@
 .form button {
     align-self: flex-start;
     margin-left: 30px;
-    background-color: rgb(184, 14, 14);
+    background-color: rgb(15, 64, 223);
     
     
     

@@ -100,7 +100,7 @@ export default function BasicTabs({ user, setUser, getUser }) {
             </Grid>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 5 }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" style={{ overflowX: "a" }} >
-                    <Tab label={!isSmallScreen && 'Statistics'}  {...a11yProps(0)} iconPosition='start' icon={<VscGraph fontSize={20} />} />
+                    <Tab label={!isSmallScreen && 'Statistical-Graph'}  {...a11yProps(0)} iconPosition='start' icon={<VscGraph fontSize={20} />} />
                     <Tab label={!isSmallScreen && "Users"} {...a11yProps(1)} iconPosition='start' icon={<CgProfile fontSize={20} />} />
                     <Tab label={!isSmallScreen && "Products"} {...a11yProps(2)} iconPosition='start' icon={<AiOutlineShoppingCart fontSize={20} />} />
                     <Tab label={!isSmallScreen && "Orders"} {...a11yProps(3)} iconPosition='start' icon={<FaShippingFast fontSize={20} />} />

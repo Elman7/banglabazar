@@ -67,21 +67,7 @@ const UserTable = ({ user, getUser }) => {
         <>
             <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 5, marginTop: 5 }}>
 
-                <TextField
-                    id="search"
-                    type="search"
-                    label="Search Users"
-                    onChange={handleSearchInputChange}
-                    className="placeholder-animation"
-                    sx={{ width: { xs: 350, sm: 500, md: 800 }, }}
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <AiOutlineSearch />
-                            </InputAdornment>
-                        ),
-                    }}
-                />
+                
             </Container>
             <AddUser getUser={getUser} user={sortedUser} />
             <Paper

@@ -4,10 +4,10 @@ const User = require('../models/User.js')
 dotenv.config()
 
 const checkAdmin = async (req, res, next) => {
-    // get the user from the jwt token and id to req objectPosition: 
+    
     const token = req.header('Authorization');
     if (!token) {
-        return res.status(401).send("Access denied")
+        return res.status(401).send("Access Denied")
     }
     try {
         const data = jwt.verify(token, process.env.JWT_SECRET)
@@ -17,10 +17,10 @@ const checkAdmin = async (req, res, next) => {
             next()
         }
         else {
-            res.status(401).send("Access denied")
+            res.status(401).send("Access Denied")
         }
     } catch (error) {
-        res.status(401).send("Access denied")
+        res.status(401).send("Access Denied")
 
     }
 

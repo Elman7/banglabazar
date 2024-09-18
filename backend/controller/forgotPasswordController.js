@@ -286,7 +286,7 @@ const sendEmailLink = async (req, res) => {
         }
         else {
           success = true
-          return res.send({ msg: "Email Sent Please Check Your Email" })
+          return res.send({ msg: "Email Has Been Sent " })
         }
       })
     } catch (error) {
@@ -308,7 +308,7 @@ const setNewPassword = async (req, res) => {
       const isValid = await jwt.verify(token, secretKey);
       if (isValid) {
         const isUser = await User.findById(id);
-        // password hashing
+        
         const salt = await bcrypt.genSalt(10)
         const hashedPass = await bcrypt.hash(newPassword, salt)
         const isSuccess = await User.findByIdAndUpdate(isUser._id, {

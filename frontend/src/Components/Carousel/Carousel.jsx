@@ -21,7 +21,7 @@ const Carousel = () => {
     return (
         <AliceCarousel
             animationType="fadeout"
-            animationDuration={800}
+            animationDuration={1000}
             disableButtonsControls
             infinite
             items={items}
@@ -29,7 +29,7 @@ const Carousel = () => {
             mouseTracking
             disableDotsControls
             autoPlay
-            autoPlayInterval={2500}
+            autoPlayInterval={2000}
             responsive={responsive}
         />
     )

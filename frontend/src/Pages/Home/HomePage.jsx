@@ -16,19 +16,51 @@ const HomePage = () => {
         getCart()
         window.scroll(0, 0)
     }, [])
+  
     const getCart = async () => {
         if (authToken !== null) {
-            const { data } = await axios.get(`${process.env.REACT_APP_GET_CART}`,
-                {
+            try {
+                const { data } = await axios.get(`${process.env.REACT_APP_GET_CART}`, {
                     headers: {
                         'Authorization': authToken
                     }
-                })
-            setCart(data);
+                });
+                setCart(data);
+            } catch (error) {
+                if (error.response && error.response.status === 401) {
+                    // Token might be expired, try refreshing the token
+                    const newAuthToken = await refreshAccessToken();
+                    if (newAuthToken) {
+                        // Retry the getCart request with the new token
+                        localStorage.setItem('Authorization', newAuthToken);
+                        const { data } = await axios.get(`${process.env.REACT_APP_GET_CART}`, {
+                            headers: {
+                                'Authorization': newAuthToken
+                            }
+                        });
+                        setCart(data);
+                    }
+                }
+            }
         }
-
     }
-
+    
+    const refreshAccessToken = async () => {
+        const refreshToken = localStorage.getItem('RefreshToken');
+        if (refreshToken) {
+            try {
+                const { data } = await axios.post(`${process.env.REACT_APP_REFRESH_TOKEN}`, {
+                    refreshToken
+                });
+                return data.newAuthToken;  // Assuming API returns a new access token
+            } catch (error) {
+                console.error('Error refreshing access token', error);
+                // Handle refresh failure (e.g., log out user)
+            }
+        }
+        return null;
+    }
+    
 
 
     return (

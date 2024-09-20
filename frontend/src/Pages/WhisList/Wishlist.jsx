@@ -60,41 +60,57 @@ const Wishlist = () => {
 
     return (
         <>
-            <Typography variant='h3' sx={{ textAlign: 'center', margin: "10px 0 ", color: '#1976d2', fontWeight: 'bold' }}>Wishlist</Typography>
-            {setProceed &&
+            <Typography variant='h3' sx={{ textAlign: 'center', margin: "20px 0", color: '#1976d2', fontWeight: 'bold' }}>
+                Wishlist
+            </Typography>
 
-                wishlistData.length <= 0 ?
-                (<Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <div className="main-card">
-                        <img src={EmptyCart} alt="Empty_cart" className="empty-cart-img" />
-                        <Typography variant='h6' sx={{ textAlign: 'center', color: '#1976d2', fontWeight: 'bold' }}>No products in wishlist</Typography>
-                    </div>
-                </Box>)
-                : (<Container maxWidth='xl' style={{ display: "flex", justifyContent: 'center', flexWrap: "wrap", paddingBottom: 20 }}>
+            {setProceed && wishlistData.length <= 0 ? (
+                <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', padding: '20px' }}>
+                    <img src={EmptyCart} alt="Empty wishlist" className="empty-cart-img" style={{ maxWidth: '200px', marginBottom: '20px' }} />
+                    <Typography variant='h6' sx={{ textAlign: 'center', color: '#1976d2', fontWeight: 'bold' }}>
+                        No products in wishlist
+                    </Typography>
+                </Box>
+            ) : (
+                <Container maxWidth='xl' sx={{ display: "flex", justifyContent: 'center', flexWrap: "wrap", gap: '20px', paddingBottom: '20px' }}>
                     {wishlistData.map(product => (
-                        <CartCard product={product} removeFromCart={removeFromWishlist} key={product._id} />
+                        <CartCard 
+                            product={product} 
+                            removeFromCart={removeFromWishlist} 
+                            key={product._id} 
+                            sx={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '10px', padding: '20px' }}
+                        />
                     ))}
-                </Container>)
+                </Container>
+            )}
 
-            }
-
-            <Dialog open={openAlert}
+            <Dialog
+                open={openAlert}
                 keepMounted
                 onClose={handleClose}
                 TransitionComponent={Transition}
-
-                aria-describedby="alert-dialog-slide-description">
-                <DialogContent sx={{ width: { xs: 280, md: 350, xl: 400 }, display: 'flex', justifyContent: 'center' }}>
-                    <Typography variant='h5'> Please Login To Proceed</Typography>
+                aria-describedby="alert-dialog-slide-description"
+                sx={{ textAlign: 'center' }}
+            >
+                <DialogContent sx={{ width: { xs: 280, md: 350, xl: 400 }, display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+                    <Typography variant='h5' sx={{ fontWeight: 'bold', color: '#1976d2', marginBottom: '20px' }}>
+                        Please Login to Proceed
+                    </Typography>
                 </DialogContent>
-                <DialogActions sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
-                    <Button variant='contained' onClick={handleToLogin} endIcon={<AiOutlineLogin />} color='primary'>Login</Button>
-                    <Button variant='contained' color='error' endIcon={<AiFillCloseCircle />} onClick={handleClose}>Close</Button>
+                <DialogActions sx={{ display: 'flex', justifyContent: 'space-evenly', padding: '20px' }}>
+                    <Button variant='contained' onClick={handleToLogin} endIcon={<AiOutlineLogin />} color='primary'>
+                        Login
+                    </Button>
+                    <Button variant='contained' color='error' onClick={handleClose} endIcon={<AiFillCloseCircle />}>
+                        Close
+                    </Button>
                 </DialogActions>
             </Dialog>
+            
             <CopyRight sx={{ mt: 8, mb: 10 }} />
         </>
-    )
+    );
+
 }
 
 export default Wishlist

@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import CopyRight from '../CopyRight/CopyRight';
 import { Transition, handleClose } from '../../Constants/Constant';
 import { AiFillCloseCircle, AiOutlineSave } from 'react-icons/ai';
+import emailjs from 'emailjs-com'; // Import EmailJS
 
 const CheckoutForm = () => {
     const { cart } = useContext(ContextFunction);
@@ -69,14 +70,46 @@ const CheckoutForm = () => {
 
     const checkOutHandler = (e) => {
         e.preventDefault();
-
+    
         if (!userDetails.firstName || !userDetails.lastName || !userDetails.userEmail || !userDetails.phoneNumber || !userDetails.address || !userDetails.zipCode || !userDetails.city || !userDetails.userState) {
             toast.error("Please fill all fields", { autoClose: 500, theme: "colored" });
         } else {
-            setOrderComplete(true);
-            toast.success("Order placed successfully", { autoClose: 500, theme: "colored" });
+            // Prepare email parameters
+            const templateParams = {
+                email_to: 'elmanaust@gmail.com',
+                from_name: `${userDetails.firstName} ${userDetails.lastName}`,
+                message: `
+                    Order Details:
+                    Name: ${userDetails.firstName} ${userDetails.lastName}
+                    Email: ${userDetails.userEmail}
+                    Phone: ${userDetails.phoneNumber}
+                    Address: ${userDetails.address}, ${userDetails.city}, ${userDetails.zipCode}, ${userDetails.userState}
+                    Total Amount: $${totalAmount}
+    
+                    Cart Items:
+                    ${cart.map(item => `${item.productId.name} - Quantity: ${item.quantity}`).join('\n')}
+                `
+            };
+    
+            // Use EmailJS to send the email
+            emailjs.send(
+                'service_krg35hv',   //  EmailJS Service ID
+                'template_djuhrlj',  //  EmailJS Template ID
+                templateParams,
+                'cBi6mXGNaEI7hlh9s'    // EmailJS Public Key
+            )
+            .then((response) => {
+                console.log('Email sent successfully', response.status, response.text);
+                setOrderComplete(true);
+                toast.success("Order placed successfully. Confirmation sent via email.", { autoClose: 500, theme: "colored" });
+            })
+            .catch((err) => {
+                console.error('Failed to send email', err);
+                toast.error("Failed to send order confirmation email.", { autoClose: 500, theme: "colored" });
+            });
         }
     };
+    
 
     const handleOnchange = (e) => {
         setUserDetails({ ...userDetails, [e.target.name]: e.target.value });

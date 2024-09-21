@@ -144,7 +144,7 @@ const Register = () => {
                   required
                   fullWidth
                   id="phoneNumber"
-                  label="Contact Number"
+                  label="Contact Number(Last 10 Digit)"
                   name="phoneNumber"
                   value={credentials.phoneNumber}
                   onChange={handleOnChange}

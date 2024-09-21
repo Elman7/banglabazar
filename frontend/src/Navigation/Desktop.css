@@ -1,31 +1,36 @@
 .nav {
     display: flex;
-    justify-content: space-around;
-    gap: 220px;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    box-shadow: 0 5px 15px rgba(18, 5, 5, 0.1);
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: white;
-    
-    
+    background-color: white;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 nav .logo {
-    
-    width: 100px;
-    font-weight: 800;
-    font-size: 25px;
-
+    width: 120px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #1976d2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 nav ul {
     display: flex;
+    align-items: center;
+    gap: 30px;
     line-height: 40px;
-
+    transition: all 0.3s ease;
 }
 
 nav ul li {
@@ -34,20 +39,24 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    margin: 0 2px;
-    padding: 8px 18px;
-    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
     font-weight: 600;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+nav ul li a:hover {
+    background-color: #f0f0f0;
+    color: #1976d2;
 }
 
 .nav-icon-span {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .nav-items {
     line-height: 40px;
-   
 }
 
 nav ul .nav-links:after {
@@ -56,34 +65,37 @@ nav ul .nav-links:after {
     height: 3px;
     width: 0;
     background: transparent;
-    transition: width 0.4s ease, background-color .3s ease;
+    transition: width 0.4s ease, background-color 0.3s ease;
 }
 
 nav ul .nav-links:hover:after {
     width: 100%;
-    background: #1976d2;
+    background-color: #1976d2;
 }
 
 .nav-icon:not(:last-child) {
-    font-size: 29px;
+    font-size: 1.8rem;
 }
 
 @media screen and (max-width: 900px) {
-
-
     .nav ul {
         display: none;
     }
 
     .nav {
         display: block;
+        padding: 15px;
+    }
+
+    .nav-icon-span {
+        font-size: 2rem;
+        cursor: pointer;
     }
 }
 
-
-@media (min-width: 900px) and (max-width:1096px) {
+@media (min-width: 900px) and (max-width: 1096px) {
     .nav {
-        gap: 10px;
-        justify-content: space-around;
+        gap: 15px;
+        justify-content: space-between;
     }
 }

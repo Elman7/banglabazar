@@ -117,41 +117,156 @@ const CheckoutForm = () => {
 
     return (
         <>
-            <Container sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginBottom: 10 }}>
-                <Typography variant='h6' sx={{ margin: '20px 0' }}>Checkout</Typography>
+            <Container 
+                sx={{ 
+                    width: '100%', 
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    alignItems: 'center', 
+                    flexDirection: 'column', 
+                    marginBottom: 10, 
+                    padding: '20px', 
+                    backgroundColor: '#f7f7f7', 
+                    borderRadius: '10px', 
+                    boxShadow: '0 8px 16px rgba(0,0,0,0.1)' 
+                }}>
+                <Typography 
+                    variant='h6' 
+                    sx={{ 
+                        margin: '20px 0', 
+                        fontFamily: 'Playfair Display, serif', 
+                        fontWeight: '600', 
+                        color: '#333' 
+                    }}>
+                    Checkout
+                </Typography>
+    
                 <form noValidate autoComplete="off" className="checkout_form" onSubmit={checkOutHandler} >
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
-                            <TextField inputProps={{ readOnly: true }} disabled label="First Name" name='firstName' value={userDetails.firstName || ''} onChange={handleOnchange} variant="outlined" fullWidth />
+                            <TextField 
+                                inputProps={{ readOnly: true }} 
+                                disabled 
+                                label="First Name" 
+                                name='firstName' 
+                                value={userDetails.firstName || ''} 
+                                onChange={handleOnchange} 
+                                variant="outlined" 
+                                fullWidth 
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField inputProps={{ readOnly: true }} disabled label="Last Name" name='lastName' value={userDetails.lastName || ''} onChange={handleOnchange} variant="outlined" fullWidth />
+                            <TextField 
+                                inputProps={{ readOnly: true }} 
+                                disabled 
+                                label="Last Name" 
+                                name='lastName' 
+                                value={userDetails.lastName || ''} 
+                                onChange={handleOnchange} 
+                                variant="outlined" 
+                                fullWidth 
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField inputProps={{ readOnly: true }} disabled label="Contact Number" type='tel' name='phoneNumber' value={userDetails.phoneNumber || ''} onChange={handleOnchange} variant="outlined" fullWidth />
+                            <TextField 
+                                inputProps={{ readOnly: true }} 
+                                disabled 
+                                label="Contact Number" 
+                                type='tel' 
+                                name='phoneNumber' 
+                                value={userDetails.phoneNumber || ''} 
+                                onChange={handleOnchange} 
+                                variant="outlined" 
+                                fullWidth 
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField inputProps={{ readOnly: true }} disabled label="Email" name='userEmail' value={userDetails.userEmail || ''} onChange={handleOnchange} variant="outlined" fullWidth />
+                            <TextField 
+                                inputProps={{ readOnly: true }} 
+                                disabled 
+                                label="Email" 
+                                name='userEmail' 
+                                value={userDetails.userEmail || ''} 
+                                onChange={handleOnchange} 
+                                variant="outlined" 
+                                fullWidth 
+                            />
                         </Grid>
                         <Grid item xs={12}>
-                            <TextField label="Address" name='address' value={userDetails.address || ''} onChange={handleOnchange} variant="outlined" fullWidth />
+                            <TextField 
+                                label="Address" 
+                                name='address' 
+                                value={userDetails.address || ''} 
+                                onChange={handleOnchange} 
+                                variant="outlined" 
+                                fullWidth 
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField label="City" name='city' value={userDetails.city || ''} onChange={handleOnchange} variant="outlined" fullWidth />
+                            <TextField 
+                                label="City" 
+                                name='city' 
+                                value={userDetails.city || ''} 
+                                onChange={handleOnchange} 
+                                variant="outlined" 
+                                fullWidth 
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField type='tel' label="Postal/Zip Code" name='zipCode' value={userDetails.zipCode || ''} onChange={handleOnchange} variant="outlined" fullWidth />
+                            <TextField 
+                                type='tel' 
+                                label="Postal/Zip Code" 
+                                name='zipCode' 
+                                value={userDetails.zipCode || ''} 
+                                onChange={handleOnchange} 
+                                variant="outlined" 
+                                fullWidth 
+                            />
                         </Grid>
-                        <Grid item xs={12} >
-                            <TextField label="Province/State" name='userState' value={userDetails.userState || ''} onChange={handleOnchange} variant="outlined" fullWidth />
+                        <Grid item xs={12}>
+                            <TextField 
+                                label="Province/State" 
+                                name='userState' 
+                                value={userDetails.userState || ''} 
+                                onChange={handleOnchange} 
+                                variant="outlined" 
+                                fullWidth 
+                            />
                         </Grid>
                     </Grid>
-                    <Container sx={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 5 }}>
-                        <Link to='/update'> <Button variant='contained' endIcon={<MdUpdate />}>Update</Button></Link>
-                        <Button variant='contained' endIcon={<BsFillCartCheckFill />} type='submit'>Checkout</Button>
+    
+                    <Container 
+                        sx={{ 
+                            display: 'flex', 
+                            gap: 2, 
+                            justifyContent: 'center', 
+                            marginTop: 5 
+                        }}>
+                        <Link to='/update'>
+                            <Button 
+                                variant='contained' 
+                                endIcon={<MdUpdate />} 
+                                sx={{ 
+                                    backgroundColor: '#4CAF50', 
+                                    '&:hover': { backgroundColor: '#45a049' } 
+                                }}>
+                                Update
+                            </Button>
+                        </Link>
+                        <Button 
+                            variant='contained' 
+                            endIcon={<BsFillCartCheckFill />} 
+                            type='submit' 
+                            sx={{ 
+                                backgroundColor: '#007bff', 
+                                '&:hover': { backgroundColor: '#0056b3' } 
+                            }}>
+                            Checkout
+                        </Button>
                     </Container>
-                </form >
-
+                </form>
+    
+                {/* Alert Dialog */}
                 <Dialog
                     open={openAlert}
                     TransitionComponent={Transition}
@@ -160,14 +275,39 @@ const CheckoutForm = () => {
                     aria-describedby="alert-dialog-slide-description"
                 >
                     <DialogContent sx={{ width: { xs: 280, md: 350, xl: 400 }, display: 'flex', justifyContent: 'center' }}>
-                        <Typography variant='h6'>Add permanent address then you don't have to add again.  </Typography>
+                        <Typography 
+                            variant='h6' 
+                            sx={{ 
+                                fontFamily: 'Playfair Display, serif', 
+                                color: '#555' 
+                            }}>
+                            Add permanent address so you don't have to add it again.
+                        </Typography>
                     </DialogContent>
                     <DialogActions sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
-                        <Link to='/update'> <Button variant='contained' endIcon={<AiOutlineSave />} color='primary' >Add</Button></Link>
-                        <Button variant='contained' color='error' endIcon={<AiFillCloseCircle />} onClick={() => handleClose(setOpenAlert)}>Close</Button>
+                        <Link to='/update'>
+                            <Button 
+                                variant='contained' 
+                                endIcon={<AiOutlineSave />} 
+                                color='primary' 
+                                sx={{ 
+                                    backgroundColor: '#4CAF50', 
+                                    '&:hover': { backgroundColor: '#45a049' } 
+                                }}>
+                                Add
+                            </Button>
+                        </Link>
+                        <Button 
+                            variant='contained' 
+                            color='error' 
+                            endIcon={<AiFillCloseCircle />} 
+                            onClick={() => handleClose(setOpenAlert)}>
+                            Close
+                        </Button>
                     </DialogActions>
                 </Dialog>
-
+    
+                {/* Order Complete Dialog */}
                 <Dialog
                     open={orderComplete}
                     TransitionComponent={Transition}
@@ -176,15 +316,35 @@ const CheckoutForm = () => {
                     aria-describedby="order-complete-dialog"
                 >
                     <DialogContent sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
-                        <Typography variant='h6'>Order Complete</Typography>
-                        <Typography variant='body1'>Thank you for your purchase!</Typography>
+                        <Typography 
+                            variant='h6' 
+                            sx={{ 
+                                fontFamily: 'Playfair Display, serif', 
+                                fontWeight: '600', 
+                                color: '#333' 
+                            }}>
+                            Order Complete
+                        </Typography>
+                        <Typography 
+                            variant='body1' 
+                            sx={{ color: '#555', marginTop: '10px' }}>
+                            Thank you for your purchase!
+                        </Typography>
                     </DialogContent>
                     <DialogActions sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Button variant='contained' color='primary' onClick={() => setOrderComplete(false)}>Close</Button>
+                        <Button 
+                            variant='contained' 
+                            color='primary' 
+                            onClick={() => setOrderComplete(false)} 
+                            sx={{ 
+                                backgroundColor: '#007bff', 
+                                '&:hover': { backgroundColor: '#0056b3' } 
+                            }}>
+                            Close
+                        </Button>
                     </DialogActions>
                 </Dialog>
-
-            </Container >
+            </Container>
             <CopyRight sx={{ mt: 8, mb: 10 }} />
         </>
     );

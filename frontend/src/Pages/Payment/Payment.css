@@ -1,3 +1,26 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Main Payment Card */
 .main-payment-card {
     width: 500px;
     height: 340px;
@@ -5,12 +28,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-direction: column; */
     flex-wrap: wrap;
     padding: 10px;
-
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.main-payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Payment Box */
 .main-payment-box {
     box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.2);
     width: 700px;
@@ -22,14 +53,109 @@
     border-radius: 10px;
     padding: 10px;
     gap: 10px;
+    background-color: #fff;
 }
 
 .payment-img {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
+.payment-img:hover {
+    transform: scale(1.05);
+}
+
+/* Form styling */
+.payment-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-form input,
+.payment-form select,
+.payment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.payment-form input:focus,
+.payment-form select:focus,
+.payment-form textarea:focus {
+    border-color: #87c1d1;
+    outline: none;
+}
+
+.payment-form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Button styling */
+.payment-btn {
+    padding: 10px 20px;
+    background-color: #87c1d1;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    align-self: flex-start;
+}
+
+.payment-btn:hover {
+    background-color: #71aab5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.payment-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.payment-box-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.payment-box-footer a {
+    color: #87c1d1;
+    text-decoration: none;
+}
+
+.payment-box-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Table styling for summary */
+.payment-summary-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.payment-summary-table th, .payment-summary-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.payment-summary-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 960px) {
     .main-payment-card {
         width: 350px;
@@ -39,16 +165,18 @@
 
     .main-payment-box {
         width: 90%;
+        margin-top: 100px;
     }
 
-    .main-payment-box {
-        margin-top: 100px;
+    .payment-summary-table th, .payment-summary-table td {
+        font-size: 0.9rem;
     }
 }
 
 @media (min-width: 768px) and (max-width:1023px) {
     .main-payment-box {
         margin-top: 130px;
+        width: 70%;
     }
 
     .main-payment-card {
@@ -56,7 +184,85 @@
         height: 350px;
     }
 
-    .main-payment-box {
-        width: 70%;
+    .payment-summary-table th, .payment-summary-table td {
+        font-size: 1rem;
     }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-payment-box, .main-payment-card {
+    animation: fadeIn 0.6s ease;
+}
+
+/* Error and success message styling */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: green;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Input validation states */
+.payment-form input.invalid {
+    border-color: red;
+}
+
+.payment-form input.valid {
+    border-color: green;
+}
+
+/* Additional elements for extended functionality */
+.progress-bar {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar div {
+    width: 50%;
+    height: 10px;
+    background-color: #87c1d1;
+    transition: width 0.3s ease;
+}
+
+.notification {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.notification.success {
+    background-color: #e0f7e0;
+    color: green;
+}
+
+.notification.error {
+    background-color: #f7e0e0;
+    color: red;
+}
+
+.notification.warning {
+    background-color: #fff3cd;
+    color: #856404;
 }

@@ -1,4 +1,4 @@
-/* Global styles for more modern look */
+/* Global styles for a modern, clean look */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,6 +8,9 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
 }
 
 /* Elegant styling for total-card */
@@ -20,6 +23,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(3, 3, 3, 0.1);
     padding: 20px;
+    transition: background-color 0.3s ease;
 }
 
 /* Individual card style refinement */
@@ -27,7 +31,7 @@ body {
     width: 30%;
     background-color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -35,19 +39,23 @@ body {
 .total-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
 }
 
+/* Card container refinement */
 .card-container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    justify-content: space-around;
 }
 
+/* Main card styling */
 .main-card {
     width: 500px;
-    margin: 30px 10px 40px 10px;
+    margin: 30px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,6 +73,7 @@ body {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Cart container refinement */
 .main-cart-container {
     display: flex;
     justify-content: center;
@@ -72,6 +81,7 @@ body {
     flex-direction: column;
 }
 
+/* Cart image box styling */
 .cart-img-box {
     height: 120px;
     width: 120px;
@@ -81,6 +91,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* Cart image styling */
 .cart-img-box .cart-img {
     height: 100%;
     width: 100%;
@@ -93,11 +104,12 @@ body {
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cart-img:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Empty cart image */
@@ -107,6 +119,7 @@ body {
     object-fit: contain;
 }
 
+/* Media queries for responsiveness */
 @media screen and (max-width: 960px) {
     .main-card {
         width: 300px;

@@ -68,6 +68,7 @@ const UpdateDetails = () => {
     }
 
     let phoneRegex = /^(?:(?:\+|0{0,2})880(\s*[\-]\s*)?|[0]?)?1[3-9]\d{8}$/gm;
+    //let phoneRegex = /^0[1][3-9]\d{8}$/gm;
     let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     // let zipRegex = /^[1-9]{1}[0-9]{2}\\s{0, 1}[0-9]{3}$/;
 
